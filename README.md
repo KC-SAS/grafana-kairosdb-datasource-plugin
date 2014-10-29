@@ -26,3 +26,4 @@ and then specifiy the datasource:
             },
         },
 
+This has been tested with release 1.8.1 (2014-09-30) of Grafana and will not necessarily work with older releases.
