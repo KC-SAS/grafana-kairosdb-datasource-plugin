@@ -5,7 +5,7 @@ This is a plugin that allows Grafana to support KairosDB as datasource.
 
 To install past the files into the plugins directory of Grafana in a subfolder called kairosdb.
 
-You can then add the following to the configuration file:
+You can either use the provided configuration file or add the following to the existing configuration file:
 
         plugins: {
             // list of plugin panels
