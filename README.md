@@ -7,7 +7,7 @@ To install past the files into the plugins directory of Grafana in a subfolder c
 
 You can then add the following to the configuration file:
 
- plugins: {
+        plugins: {
             // list of plugin panels
             panels: [],
             // requirejs modules in plugins folder that should be loaded
