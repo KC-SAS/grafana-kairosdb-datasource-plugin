@@ -88,10 +88,12 @@ define([
           if(!_.has($scope.target.tags,$scope.target.currentTagKey)) {
             $scope.target.tags[$scope.target.currentTagKey] = [];
           }
-          $scope.target.tags[$scope.target.currentTagKey].push($scope.target.currentTagValue);
+          if (!_.contains($scope.target.tags[$scope.target.currentTagKey], $scope.target.currentTagValue)) {
+            $scope.target.tags[$scope.target.currentTagKey].push($scope.target.currentTagValue);
+            $scope.targetBlur();
+          }
           $scope.target.currentTagKey = '';
           $scope.target.currentTagValue = '';
-          $scope.targetBlur();
         }
 
         $scope.addFilterTagMode = false;
