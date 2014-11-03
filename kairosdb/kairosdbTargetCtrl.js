@@ -245,7 +245,8 @@ define([
           var aggregator = {
             name:$scope.target.currentHorizontalAggregatorName
           };
-          if($scope.hasSamplingRate) {aggregator.sampling_rate = $scope.target.horAggregator.samplingRate;}
+          if($scope.hasSamplingRate) {aggregator.sampling_rate = $scope.target.horAggregator.samplingRate;
+            aggregator.align_start_time = $scope.target.horAggregator.alignStartTime;}
           if($scope.hasUnit) {aggregator.unit = $scope.target.horAggregator.unit;}
           if($scope.hasFactor) {aggregator.factor = $scope.target.horAggregator.factor;}
           if($scope.hasPercentile) {aggregator.percentile = $scope.target.horAggregator.percentile;}

@@ -315,6 +315,13 @@
         <i class="icon-warning-sign"></i>
     </a>
 </li>
+<li class="grafana-target-segment" ng-show="hasSamplingRate" bs-tooltip="'Align samples to range start times'">
+    &nbsp;align&nbsp;
+    <input class="grafana-target-option-checkbox"
+           type="checkbox"
+           ng-init="target.horAggregator.alignStartTime=true"
+           ng-model="target.horAggregator.alignStartTime"> 
+</li>
 
 <li ng-show="hasUnit" class="grafana-target-segment">
     every
