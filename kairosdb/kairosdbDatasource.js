@@ -162,7 +162,7 @@ define([
             var datapoints = [];
 
             for (var i = 0; i < result.values.length; i++) {
-              var t = Math.floor(result.values[i][0] / 1000);
+              var t = result.values[i][0];
               var v = result.values[i][1];
               datapoints[i] = [v, t];
             }
