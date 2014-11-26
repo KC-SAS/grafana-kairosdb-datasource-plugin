@@ -27,4 +27,5 @@ and then specifiy the datasource:
             },
         },
 
-This has been tested with release 1.8.1 (2014-09-30) of Grafana and will not necessarily work with older releases.
+Download commit tagged v1.8.1 to be compatible with Grafana-1.8.1.
+Download latest source to be compatible with Grafana 1.9.0 RC1 (it seems there is a small bug with text editing in query fields in that version)
