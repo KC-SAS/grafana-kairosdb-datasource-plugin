@@ -1,6 +1,8 @@
 grafana-kairosdb-datasource-plugin
 ==================================
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Kratos-ISE/grafana-kairosdb-datasource-plugin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is a plugin that allows Grafana to support KairosDB as datasource.
 
 To install past the files into the plugins directory of Grafana in a subfolder called kairosdb.
