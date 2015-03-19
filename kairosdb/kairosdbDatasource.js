@@ -188,9 +188,11 @@ define([
           query.aggregators.push({
             name: target.downsampling,
             align_sampling: true,
-            align_start_time: true,
             sampling: KairosDBDatasource.prototype.convertToKairosInterval(target.sampling || options.interval)
           });
+	  if(target.samplingAlignStartTime) {
+		query.aggregators[0].align_start_time = true; 
+	  }
         }
         if(target.horizontalAggregators) {
           _.each(target.horizontalAggregators,function(chosenAggregator) {
@@ -200,7 +202,9 @@ define([
             if(chosenAggregator.sampling_rate) {
               returnedAggregator.sampling = KairosDBDatasource.prototype.convertToKairosInterval(chosenAggregator.sampling_rate);
               returnedAggregator.align_sampling = true;
-              returnedAggregator.align_start_time=chosenAggregator.align_start_time;
+              if(chosenAggregator.align_start_time) {
+                returnedAggregator.align_start_time=true;
+              }
             }
             if(chosenAggregator.unit) {
               returnedAggregator.unit = chosenAggregator.unit+'s';

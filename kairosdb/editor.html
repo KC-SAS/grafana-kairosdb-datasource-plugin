@@ -99,6 +99,13 @@
                 <i class="icon-warning-sign"></i>
             </a>
         </li>
+        <li class="grafana-target-segment" ng-hide="target.downsampling=='(NONE)'" bs-tooltip="'Align samples to range start times'">
+            &nbsp;align&nbsp;
+            <input class="grafana-target-option-checkbox"
+                   type="checkbox"
+                   ng-init="target.samplingAlignStartTime=true"
+                   ng-model="target.samplingAlignStartTime"> 
+        </li>
 
     </ul>
 
