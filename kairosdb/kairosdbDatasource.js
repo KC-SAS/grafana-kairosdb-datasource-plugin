@@ -136,8 +136,8 @@ define([
       function handleKairosDBQueryResponse(results) {
         var output = [];
         _.each(results.data.queries, function (series) {
-          var sample_size = series.sample_size;
-          console.log("sample_size:" + sample_size + " samples");
+          //var sample_size = series.sample_size;
+          //console.log("sample_size:" + sample_size + " samples");
 
           _.each(series.results, function (result) {
 
@@ -290,7 +290,7 @@ define([
             unit = 'years';
             break;
           default:
-            console.log("Unknown interval ", intervalString);
+            //console.log("Unknown interval ", intervalString);
             break;
         }
 
@@ -343,7 +343,7 @@ define([
                   unit = 'years';
                   break;
                 default:
-                  console.log("Unknown date ", date);
+                  //console.log("Unknown date ", date);
                   break;
               }
               response_obj[name] = {
@@ -352,7 +352,7 @@ define([
               };
               return;
             }
-            console.log("Unparseable date", date);
+            //console.log("Unparseable date", date);
             return;
           }
           date = kbn.parseDate(date);
@@ -364,7 +364,7 @@ define([
           return;
         }
 
-        console.log("Date is neither string nor date");
+        //console.log("Date is neither string nor date");
       }
       ////////////////////////////////////////////////////////////////////////
       return KairosDBDatasource;
