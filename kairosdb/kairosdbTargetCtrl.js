@@ -133,7 +133,7 @@ define([
             if (!$scope.target.groupByTags) {
               $scope.target.groupByTags = [];
             }
-            console.log($scope.target.groupBy.tagKey);
+            //console.log($scope.target.groupBy.tagKey);
             if (!_.contains($scope.target.groupByTags, $scope.target.groupBy.tagKey)) {
               $scope.target.groupByTags.push($scope.target.groupBy.tagKey);
               $scope.targetBlur();
