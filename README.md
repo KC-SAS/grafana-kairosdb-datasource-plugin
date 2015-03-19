@@ -29,3 +29,5 @@ and then specifiy the datasource:
 
 Download commit tagged v1.8.1 to be compatible with Grafana-1.8.1.
 Download latest source to be compatible with Grafana 1.9.0 
+
+Note: KairosDB 0.9.3 does not support align_start_time so please uncheck this option

@@ -191,7 +191,7 @@ define([
             sampling: KairosDBDatasource.prototype.convertToKairosInterval(target.sampling || options.interval)
           });
 	  if(target.samplingAlignStartTime) {
-		query.aggregators[0].align_start_time = true; 
+            query.aggregators[0].align_start_time = true; 
 	  }
         }
         if(target.horizontalAggregators) {
