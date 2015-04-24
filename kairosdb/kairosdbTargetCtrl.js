@@ -36,23 +36,48 @@ define([
       // SUGGESTION QUERIES
       //////////////////////////////
 
-      $scope.suggestMetrics = function(query, callback) {
-        if (!metricList) {
-          $scope.updateMetricList();
-        }
-        else {
-          callback(metricList);
-        }
-
+     var escapeRegex = function(e) {
+        return e.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g,"\\$&")
       };
 
-      $scope.updateMetricList = function() {
+      var semaphore = false;
+
+      $scope.suggestMetrics = function(query, callback) {
+        if(semaphore) {
+          return;
+        }
+        var MAXSIZE = 10;
+        var matcher = new RegExp(escapeRegex(query), 'i');
+        if (!metricList) {
+          $scope.updateMetricList(callback);
+        }
+        else {
+          var sublist = new Array(MAXSIZE);
+          var j = 0;
+          for(var i=0;i<metricList.length;i++){
+            if (matcher.test(metricList[i])) {
+              sublist[j] = metricList[i];
+              j++;
+              if(j===MAXSIZE-1){
+                break;
+              }
+            }
+          }
+          sublist = sublist.slice(0,j);
+          callback(sublist);
+        }
+      };
+
+      $scope.updateMetricList = function(callback) {
         $scope.metricListLoading = true;
+        semaphore = true;
         metricList = [];
         $scope.datasource.performMetricSuggestQuery().then(function(series) {
           metricList = series;
           $scope.metricListLoading = false;
-          return metricList;
+          semaphore = false;
+          if(callback)
+            callback(_.sortBy(metricList));
         });
       };
 

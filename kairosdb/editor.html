@@ -59,7 +59,6 @@
                    bs-typeahead="suggestMetrics"
                    placeholder="metric name"
                    data-min-length=0
-                   data-items=20
                    ng-blur="targetBlur()">
             <a class="grafana-target-segment" bs-tooltip="'Update the list of metric names'" ng-click="updateMetricList();">
                 <i ng-hide="metricListLoading" class="icon-refresh"></i>
